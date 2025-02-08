@@ -1,0 +1,344 @@
+/* Updated earth.css */
+* {
+<<<<<<< HEAD
+    margin: 0;
+=======
+    margin:0;
+>>>>>>> 937ea31 (Frontend revamped)
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app-wrapper {
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-content {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.text-section {
+    position: relative;
+    width: 100%;
+    padding: 2rem;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 150px;
+}
+
+.earth-section {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.earth-globe-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.earth-globe-canvas {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Enhanced text styling */
+.animated-text-container {
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    z-index: 10;
+}
+
+.animated-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: 700;
+<<<<<<< HEAD
+    color: #C7D3BF;
+=======
+    color: #839D9A;
+>>>>>>> 937ea31 (Frontend revamped)
+    letter-spacing: 2px;
+    position: relative;
+    padding: 1rem;
+    background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0.8) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+.animated-text::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 40px;
+    background: radial-gradient(
+            ellipse at center,
+            rgba(255, 255, 255, 0.4) 0%,
+            transparent 70%
+    );
+    filter: blur(10px);
+    pointer-events: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .main-content {
+        padding-top: 1rem;
+    }
+
+    .text-section {
+        padding: 1rem;
+        min-height: 100px;
+    }
+
+    .animated-text {
+        font-size: clamp(1.2rem, 5vw, 2rem);
+        padding: 0.5rem;
+    }
+}
+
+/* Stars background */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 50%;
+    animation: twinkle 1s infinite;
+}
+
+.shooting-star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: linear-gradient(to right, #ffffff 0%, transparent 100%);
+    animation: shoot 3s linear infinite;
+    transform: rotate(-45deg);
+}
+
+/* Animations */
+@keyframes twinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+@keyframes shoot {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(-45deg);
+        opacity: 1;
+    }
+    70% { opacity: 1; }
+    100% {
+        transform: translateX(200%) translateY(200%) rotate(-45deg);
+        opacity: 0;
+    }
+}
+
+/* Earth info panel */
+.earth-info-panel {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    border-radius: 12px;
+    color: white;
+    z-index: 4;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 480px) {
+    .earth-info-panel {
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        font-size: 0.9rem;
+    }
+}
+.animated-button-link {
+    text-decoration: none;
+}
+
+.animated-button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    color: #2D3047;
+    background: linear-gradient(45deg, #BDC2BF, #989C94);
+    border: none;
+    border-radius: 30px;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.4s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.animated-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 300%;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.5), transparent);
+    transition: transform 0.4s ease-in-out;
+}
+
+.animated-button:hover::before {
+    transform: translateX(100%);
+}
+
+.animated-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(45deg, #00c6ff, #6a5acd);
+}
+
+.animated-button:active {
+    transform: scale(0.98);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+/* Add these styles at the end of the file */
+
+.app-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.text-section {
+    padding-top: 2rem;
+}
+
+.earth-section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.earth-globe-container {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cta-content {
+    position: relative;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+
+
+.animated-button-link {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.button-container {
+<<<<<<< HEAD
+    position: absolute;
+    bottom: 20px; /* Adjust the distance from the bottom */
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Distributes buttons evenly */
+    align-items: center;
+    padding: 0 2rem;
+    z-index: 5;
+}
+
+/* Button alignment classes */
+.button-left {
+    flex: 0 0 auto; /* Prevent stretching */
+}
+
+.button-center {
+    flex: 0 0 auto; /* Prevent stretching */
+    margin: 0 auto; /* Center alignment */
+}
+
+.button-right {
+    flex: 0 0 auto; /* Prevent stretching */
+=======
+    position: fixed;  /* Changed to fixed positioning */
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 999;  /* Ensure it's above other elements */
+}
+
+.button-left {
+    position: fixed;  /* Force position */
+    bottom: 10px;
+    left: 20px;
+}
+
+.button-right {
+    position: fixed;  /* Force position */
+    bottom: 10px;
+    right: 20px;
+}
+
+/* Make the buttons themselves a bit smaller if needed */
+.animated-button {
+    font-size: 1.2rem;  /* Slightly smaller font */
+    padding: 0.4rem 1.5rem;  /* Slightly smaller padding */
+>>>>>>> 937ea31 (Frontend revamped)
+}
